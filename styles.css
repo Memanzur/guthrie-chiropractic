@@ -248,35 +248,10 @@ ul {
   transition: all 0.3s ease;
 }
 
-/* ===== WHIMSY DECORATIONS ===== */
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(2deg); }
-}
-
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-8px) scale(1.03); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
-}
-
-@keyframes blob-morph {
-  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-  50% { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
-  75% { border-radius: 60% 30% 60% 40% / 70% 40% 50% 60%; }
-}
-
-.blob-decoration {
-  position: absolute;
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  animation: blob-morph 12s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
+/* ===== SUBTLE ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== HERO ===== */
@@ -290,13 +265,12 @@ ul {
 .hero::before {
   content: '';
   position: absolute;
-  top: -30%;
-  right: -15%;
-  width: 500px;
-  height: 500px;
-  background: rgba(74,103,65,0.06);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  animation: blob-morph 15s ease-in-out infinite, floatSlow 8s ease-in-out infinite;
+  top: -20%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74,103,65,0.05) 0%, transparent 70%);
+  border-radius: 50%;
 }
 
 .hero-content {
@@ -382,13 +356,12 @@ ul {
 .quiz-promo-card::before {
   content: '';
   position: absolute;
-  bottom: -60px;
-  left: -60px;
-  width: 200px;
-  height: 200px;
-  background: rgba(192,122,86,0.06);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  animation: blob-morph 10s ease-in-out infinite;
+  bottom: -40px;
+  left: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(192,122,86,0.06) 0%, transparent 70%);
+  border-radius: 50%;
 }
 
 .quiz-promo-text h2 {
@@ -412,7 +385,6 @@ ul {
   width: 120px;
   height: 120px;
   color: var(--color-forest);
-  animation: float 4s ease-in-out infinite;
 }
 
 /* ===== SERVICES PREVIEW ===== */
@@ -438,30 +410,10 @@ ul {
   overflow: hidden;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 100px;
-  height: 100px;
-  background: rgba(74,103,65,0.04);
-  border-radius: 50%;
-  transition: all 0.4s ease;
-}
-
 .service-card:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-6px);
-  border-color: var(--color-forest);
-}
-
-.service-card:hover::before {
-  width: 200px;
-  height: 200px;
-  top: -80px;
-  right: -80px;
-  background: rgba(74,103,65,0.06);
+  transform: translateY(-4px);
+  border-color: var(--color-clay);
 }
 
 .service-icon {
@@ -950,11 +902,6 @@ ul {
   scroll-margin-top: 80px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .quiz-question h2 {
   font-family: var(--font-heading);
   font-size: 1.6rem;
@@ -1077,7 +1024,6 @@ ul {
   font-size: 0.8rem;
   color: var(--color-text-light);
   margin-top: var(--space-xs);
-  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .spine-options-label {

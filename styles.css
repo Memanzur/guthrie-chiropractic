@@ -35,6 +35,10 @@
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.1);
+
+  /* Whimsy */
+  --gradient-warm: linear-gradient(135deg, #FDF6EC 0%, #f3e8d5 50%, #e8ddd3 100%);
+  --gradient-glow: radial-gradient(circle, rgba(74,103,65,0.06) 0%, transparent 70%);
 }
 
 /* ===== RESET ===== */
@@ -244,10 +248,41 @@ ul {
   transition: all 0.3s ease;
 }
 
+/* ===== WHIMSY DECORATIONS ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.03); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes blob-morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
+  75% { border-radius: 60% 30% 60% 40% / 70% 40% 50% 60%; }
+}
+
+.blob-decoration {
+  position: absolute;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blob-morph 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-sand) 100%);
-  padding: var(--space-2xl) 0;
+  background: var(--gradient-warm);
+  padding: var(--space-2xl) 0 calc(var(--space-2xl) + 2rem);
   position: relative;
   overflow: hidden;
 }
@@ -255,12 +290,13 @@ ul {
 .hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(74,103,65,0.08) 0%, transparent 70%);
-  border-radius: 50%;
+  top: -30%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: rgba(74,103,65,0.06);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blob-morph 15s ease-in-out infinite, floatSlow 8s ease-in-out infinite;
 }
 
 .hero-content {
@@ -332,13 +368,27 @@ ul {
 }
 
 .quiz-promo-card {
-  background: var(--color-cream);
+  background: var(--gradient-warm);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   display: flex;
   align-items: center;
   gap: var(--space-xl);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-promo-card::before {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: rgba(192,122,86,0.06);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blob-morph 10s ease-in-out infinite;
 }
 
 .quiz-promo-text h2 {
@@ -362,6 +412,7 @@ ul {
   width: 120px;
   height: 120px;
   color: var(--color-forest);
+  animation: float 4s ease-in-out infinite;
 }
 
 /* ===== SERVICES PREVIEW ===== */
@@ -380,15 +431,37 @@ ul {
 .service-card {
   background: var(--color-white);
   border: 1px solid var(--color-sand);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  background: rgba(74,103,65,0.04);
+  border-radius: 50%;
+  transition: all 0.4s ease;
 }
 
 .service-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
-  border-color: var(--color-clay);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-color: var(--color-forest);
+}
+
+.service-card:hover::before {
+  width: 200px;
+  height: 200px;
+  top: -80px;
+  right: -80px;
+  background: rgba(74,103,65,0.06);
 }
 
 .service-icon {
@@ -428,10 +501,28 @@ ul {
 
 .testimonial-card {
   background: var(--color-white);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   border: none;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  font-size: 4rem;
+  font-family: var(--font-heading);
+  color: var(--color-clay);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
 }
 
 .testimonial-card p {
@@ -711,6 +802,24 @@ ul {
   border: 2px dashed var(--color-sand);
 }
 
+.service-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-detail:hover .service-image img {
+  transform: scale(1.05);
+}
+
 /* ===== CONTACT PAGE ===== */
 .contact-section {
   padding: var(--space-2xl) 0;
@@ -869,21 +978,51 @@ ul {
   padding: var(--space-md);
   background: var(--color-white);
   border: 2px solid var(--color-sand);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   font-size: 1rem;
   text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-option::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-forest);
+  transition: transform 0.3s ease;
 }
 
 .quiz-option:hover {
   border-color: var(--color-forest);
   background: var(--color-cream);
+  transform: translateX(4px);
 }
 
 .quiz-option.selected {
   border-color: var(--color-forest);
   background: rgba(74,103,65,0.08);
+  box-shadow: 0 0 0 1px var(--color-forest);
+}
+
+.quiz-option.selected::after {
+  transform: translateY(-50%) scale(1);
+  background: var(--color-forest);
+  content: '\2713';
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
 }
 
 .quiz-option input {
@@ -901,35 +1040,44 @@ ul {
 .spine-diagram {
   text-align: center;
   position: relative;
+  background: var(--gradient-warm);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-sm);
+  border: 1px solid var(--color-sand);
 }
 
 .body-svg {
   width: 200px;
   height: auto;
   max-height: 420px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.05));
 }
 
 .spine-zone {
-  transition: fill 0.2s ease;
+  transition: fill 0.25s ease;
+  cursor: pointer;
 }
 
 .spine-zone:hover {
-  fill: rgba(74,103,65,0.08);
+  fill: rgba(74,103,65,0.12);
 }
 
 .spine-highlight {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
+  filter: drop-shadow(0 0 8px rgba(74,103,65,0.3));
 }
 
 .zone-label {
   pointer-events: none;
   font-weight: 600;
+  transition: fill 0.2s ease;
 }
 
 .spine-hint {
   font-size: 0.8rem;
   color: var(--color-text-light);
   margin-top: var(--space-xs);
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .spine-options-label {

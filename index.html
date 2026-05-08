@@ -37,14 +37,82 @@
       "latitude": 40.6024,
       "longitude": -111.9391
     },
-    "openingHours": ["Mo-Fr 09:00-18:00"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "foundingDate": "1993",
-    "description": "Trusted chiropractic care in West Jordan, Utah since 1993.",
+    "description": "Trusted chiropractic care in West Jordan, Utah since 1993. Dr. Dan Guthrie specializes in spinal adjustments, laser therapy, spinal decompression, Pro Adjuster, nutritional counseling, and immune system support.",
     "priceRange": "$$",
-    "areaServed": {
-      "@type": "City",
-      "name": "West Jordan"
-    }
+    "areaServed": [
+      {"@type": "City", "name": "West Jordan"},
+      {"@type": "City", "name": "South Jordan"},
+      {"@type": "City", "name": "Taylorsville"},
+      {"@type": "City", "name": "Herriman"},
+      {"@type": "City", "name": "Riverton"}
+    ],
+    "hasMap": "https://www.google.com/maps?q=Guthrie+Chiropractic+Physicians+8822+S+Redwood+Rd+West+Jordan+UT+84088",
+    "sameAs": [],
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Dan Guthrie",
+      "jobTitle": "Doctor of Chiropractic",
+      "alumniOf": "Western States Chiropractic College"
+    },
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Chiropractic Adjustments", "description": "Traditional hands-on spinal adjustments for pain relief and alignment"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Laser Therapy", "description": "Cold laser technology to reduce inflammation and accelerate tissue healing"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Spinal Decompression", "description": "Non-surgical decompression therapy for herniated discs and sciatica"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Pro Adjuster", "description": "Computer-assisted spinal scanning and gentle instrument-based corrections"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Nutritional Counseling", "description": "Personalized nutrition guidance for inflammation reduction and wellness"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Immune System Support", "description": "GAP protocol for digestive health and immune function"}}
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Guthrie Chiropractic offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer chiropractic adjustments, Pro Adjuster (computer-assisted), laser therapy, spinal decompression, flexion/extension therapy, drop table technique, electric stimulation, nutritional counseling, and immune system support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long has Guthrie Chiropractic been in West Jordan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dr. Dan Guthrie has been providing chiropractic care in Utah since 1993, with over 30 years of clinical experience helping patients find lasting relief from pain."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a referral to see a chiropractor at Guthrie Chiropractic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No referral is needed. We welcome new patients and you can schedule your first consultation by calling (801) 957-9696."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Guthrie Chiropractic located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are located at 8822 South Redwood Rd, Suite C212, West Jordan, UT 84088. We serve patients from West Jordan, South Jordan, Taylorsville, Herriman, and Riverton."
+        }
+      }
+    ]
   }
   </script>
 

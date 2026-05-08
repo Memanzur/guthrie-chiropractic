@@ -497,6 +497,18 @@ ul {
   color: var(--color-forest);
 }
 
+/* ===== SIGNATURE ===== */
+.hero::after {
+  content: '\2605';
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  font-size: 6px;
+  color: rgba(196,168,130,0.25);
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--color-slate);
@@ -826,6 +838,7 @@ ul {
 .quiz-question.active {
   display: block;
   animation: fadeIn 0.4s ease;
+  scroll-margin-top: 80px;
 }
 
 @keyframes fadeIn {
@@ -891,6 +904,7 @@ ul {
 .quiz-results.active {
   display: block;
   animation: fadeIn 0.4s ease;
+  scroll-margin-top: 80px;
 }
 
 .result-card {

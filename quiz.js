@@ -29,7 +29,10 @@
   function showQuestion(num) {
     questions.forEach(function (q) { q.classList.remove('active'); });
     var target = document.querySelector('[data-question="' + num + '"]');
-    if (target) target.classList.add('active');
+    if (target) {
+      target.classList.add('active');
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     // Update progress
     progressSteps.forEach(function (step) {

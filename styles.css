@@ -898,7 +898,8 @@ ul {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  outline: none;
+  outline: 2px solid var(--color-forest);
+  outline-offset: -1px;
   border-color: var(--color-forest);
   box-shadow: 0 0 0 3px rgba(74,103,65,0.1);
 }
@@ -1191,7 +1192,8 @@ ul {
 }
 
 .email-form input:focus {
-  outline: none;
+  outline: 2px solid var(--color-forest);
+  outline-offset: -1px;
   border-color: var(--color-forest);
 }
 
@@ -1224,6 +1226,14 @@ ul {
   width: 100%;
   height: 350px;
   border: none;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ===== RESPONSIVE ===== */

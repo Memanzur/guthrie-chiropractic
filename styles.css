@@ -254,31 +254,28 @@ ul {
 
 /* ===== HERO ===== */
 .hero {
-  background: var(--gradient-warm);
+  background: var(--color-cream);
   padding: var(--space-2xl) 0 calc(var(--space-2xl) + 2rem);
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(74,103,65,0.05) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
 .hero-content {
   position: relative;
-  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-slate);
@@ -290,16 +287,29 @@ ul {
 }
 
 .hero-sub {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--color-text-light);
   margin-bottom: var(--space-lg);
-  max-width: 550px;
+  max-width: 480px;
 }
 
 .hero-actions {
   display: flex;
   gap: var(--space-sm);
   flex-wrap: wrap;
+}
+
+.hero-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ===== TRUST BAR ===== */
@@ -1177,6 +1187,14 @@ ul {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    max-width: 480px;
+  }
+
   .hero h1 {
     font-size: 2.2rem;
   }

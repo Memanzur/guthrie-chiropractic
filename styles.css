@@ -70,6 +70,12 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 ul {
   list-style: none;
 }
@@ -196,6 +202,7 @@ ul {
   color: var(--color-text-light);
   transition: color 0.2s ease;
   position: relative;
+  padding: 12px 0;
 }
 
 .nav-links a:hover,
@@ -604,10 +611,12 @@ ul {
 
 .footer-links a:hover {
   color: var(--color-white);
+  text-decoration: underline;
 }
 
 .footer-contact a:hover {
   color: var(--color-white);
+  text-decoration: underline;
 }
 
 .footer-bottom {

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Treatment | Wellness Quiz | Guthrie Chiropractic Physicians</title>
+  <meta name="description" content="Take our 2-minute wellness quiz to find the best chiropractic treatment for your needs. Personalized recommendations from Guthrie Chiropractic in West Jordan, UT.">
+  <link rel="canonical" href="https://memanzur.github.io/guthrie-chiropractic/quiz.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">Guthrie</span>
+        <span class="logo-sub">Chiropractic Physicians</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="quiz.html" class="active">Find Your Treatment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:8019579696" class="nav-cta">Call (801) 957-9696</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Find Your Treatment</h1>
+      <p>Answer a few quick questions and we'll recommend the best path to relief for you.</p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section">
+    <div class="container quiz-container">
+
+      <!-- Progress Bar -->
+      <div class="quiz-progress">
+        <div class="quiz-progress-step active" data-step="1"></div>
+        <div class="quiz-progress-step" data-step="2"></div>
+        <div class="quiz-progress-step" data-step="3"></div>
+        <div class="quiz-progress-step" data-step="4"></div>
+        <div class="quiz-progress-step" data-step="5"></div>
+        <div class="quiz-progress-step" data-step="6"></div>
+      </div>
+
+      <!-- Question 1: Primary Concern -->
+      <div class="quiz-question active" data-question="1">
+        <h2>What's your primary concern?</h2>
+        <p>Select the one that describes your situation best.</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="back-pain">
+            Back pain or stiffness
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="neck-pain">
+            Neck pain or headaches
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="joint-pain">
+            Joint pain (hip, knee, shoulder, ankle)
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="sciatica">
+            Sciatica or leg numbness/tingling
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="wellness">
+            General wellness and prevention
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="digestion">
+            Digestive or immune system issues
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2: Duration -->
+      <div class="quiz-question" data-question="2">
+        <h2>How long have you been experiencing this?</h2>
+        <p>This helps us understand if your condition is acute or chronic.</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="recent">
+            Less than 2 weeks
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="weeks">
+            2 weeks to 3 months
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="months">
+            3 to 12 months
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="chronic">
+            Over a year
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3: Severity -->
+      <div class="quiz-question" data-question="3">
+        <h2>How would you describe the intensity?</h2>
+        <p>On a typical day, how much does it affect you?</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q3" value="mild">
+            Mild - noticeable but doesn't stop me
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q3" value="moderate">
+            Moderate - limits some activities
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q3" value="severe">
+            Severe - significantly affects daily life
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 4: Previous Treatment -->
+      <div class="quiz-question" data-question="4">
+        <h2>Have you tried chiropractic care before?</h2>
+        <p>This helps us tailor our approach.</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q4" value="never">
+            No, this would be my first time
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q4" value="once">
+            Yes, once or twice
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q4" value="regular">
+            Yes, I've been to a chiropractor regularly
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 5: Preference -->
+      <div class="quiz-question" data-question="5">
+        <h2>What matters most to you in treatment?</h2>
+        <p>Everyone has different priorities.</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q5" value="gentle">
+            A gentle, low-force approach
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q5" value="fast">
+            Fast pain relief
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q5" value="holistic">
+            Treating the root cause, not just symptoms
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q5" value="natural">
+            Avoiding medication and surgery
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 6: Cause -->
+      <div class="quiz-question" data-question="6">
+        <h2>What do you think caused your issue?</h2>
+        <p>Select the closest match.</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q6" value="injury">
+            An injury or accident
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q6" value="posture">
+            Poor posture or desk work
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q6" value="aging">
+            Aging or wear and tear
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q6" value="unsure">
+            Not sure, it just started
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q6" value="lifestyle">
+            Lifestyle or diet
+          </label>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="quiz-nav">
+        <button class="btn btn-secondary quiz-prev" style="visibility: hidden;">Back</button>
+        <button class="btn btn-primary quiz-next" disabled>Next</button>
+      </div>
+
+      <!-- Results -->
+      <div class="quiz-results" id="quizResults">
+        <div class="result-card">
+          <h2>Your Personalized Wellness Report</h2>
+          <p id="resultIntro"></p>
+
+          <div class="result-recommendation">
+            <h3>Recommended Treatment</h3>
+            <p id="resultPrimary"></p>
+          </div>
+
+          <div class="result-recommendation" id="resultSecondaryBlock" style="border-left-color: var(--color-terracotta);">
+            <h3>Also Consider</h3>
+            <p id="resultSecondary"></p>
+          </div>
+
+          <div id="resultEducation" style="margin-top: var(--space-md);">
+            <h3>Understanding Your Condition</h3>
+            <p id="resultEducationText"></p>
+          </div>
+        </div>
+
+        <div class="email-capture">
+          <h3>Get Your Full Wellness Report</h3>
+          <p>We'll send a detailed breakdown with exercises and tips you can start today.</p>
+          <div class="email-form">
+            <input type="email" id="resultEmail" placeholder="your@email.com">
+            <button class="btn btn-primary" id="emailSubmit">Send My Report</button>
+          </div>
+          <p id="emailConfirm" style="display:none; color: var(--color-forest); margin-top: var(--space-sm); font-weight: 600;">Thanks! Check your inbox.</p>
+        </div>
+
+        <div class="result-cta">
+          <h3>Ready to Get Started?</h3>
+          <p>Schedule your consultation with Dr. Guthrie and take the first step toward lasting relief.</p>
+          <a href="tel:8019579696" class="btn btn-primary">Call (801) 957-9696</a>
+          <a href="contact.html" class="btn btn-outline" style="margin-left: var(--space-xs);">Send a Message</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Guthrie</span>
+        <span class="logo-sub">Chiropractic Physicians</span>
+        <p class="footer-tagline">Trusted care in West Jordan since 1993.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="quiz.html">Find Your Treatment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>8822 South Redwood Rd, #C212<br>West Jordan, UT 84088</p>
+        <p><a href="tel:8019579696">(801) 957-9696</a></p>
+      </div>
+      <div class="footer-hours">
+        <h4>Hours</h4>
+        <p>Monday - Friday: 9am - 6pm<br>Saturday - Sunday: Closed</p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Guthrie Chiropractic Physicians. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>

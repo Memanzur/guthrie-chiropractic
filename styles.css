@@ -1229,6 +1229,57 @@ ul {
   border: none;
 }
 
+/* ===== LEGAL PAGES ===== */
+.legal-section {
+  padding: var(--space-2xl) 0;
+}
+
+.legal-content {
+  max-width: 740px;
+}
+
+.legal-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-slate);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-content p {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.legal-content ul {
+  list-style: disc;
+  padding-left: var(--space-md);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-content li {
+  margin-bottom: var(--space-xs);
+  line-height: 1.6;
+}
+
+.legal-content a {
+  color: var(--color-forest);
+}
+
+.legal-content a:hover {
+  color: var(--color-forest-dark);
+}
+
+.legal-updated {
+  font-size: 0.9rem;
+  color: var(--color-clay);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+}
+
 /* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

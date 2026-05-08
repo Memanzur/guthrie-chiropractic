@@ -93,6 +93,7 @@ ul {
   font-weight: 700;
   margin-bottom: var(--space-sm);
   color: var(--color-slate);
+  text-wrap: balance;
 }
 
 .section-sub {
@@ -287,6 +288,7 @@ ul {
   line-height: 1.2;
   color: var(--color-slate);
   margin-bottom: var(--space-md);
+  text-wrap: balance;
 }
 
 .hero-accent {
@@ -542,7 +544,6 @@ ul {
 .cta-section {
   background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-forest-dark) 100%);
   padding: var(--space-2xl) 0;
-  text-align: center;
 }
 
 .cta-content h2 {
@@ -550,19 +551,19 @@ ul {
   font-size: 2.2rem;
   color: var(--color-white);
   margin-bottom: var(--space-sm);
+  text-wrap: balance;
 }
 
 .cta-content p {
   color: rgba(255,255,255,0.85);
   font-size: 1.1rem;
   max-width: 500px;
-  margin: 0 auto var(--space-lg);
+  margin-bottom: var(--space-lg);
 }
 
 .cta-actions {
   display: flex;
   gap: var(--space-sm);
-  justify-content: center;
   flex-wrap: wrap;
 }
 

@@ -890,6 +890,72 @@ ul {
   display: none;
 }
 
+/* ===== SPINE DIAGRAM ===== */
+.spine-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.spine-diagram {
+  text-align: center;
+  position: relative;
+}
+
+.body-svg {
+  width: 200px;
+  height: auto;
+  max-height: 420px;
+}
+
+.spine-zone {
+  transition: fill 0.2s ease;
+}
+
+.spine-zone:hover {
+  fill: rgba(74,103,65,0.08);
+}
+
+.spine-highlight {
+  transition: opacity 0.3s ease;
+}
+
+.zone-label {
+  pointer-events: none;
+  font-weight: 600;
+}
+
+.spine-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-top: var(--space-xs);
+}
+
+.spine-options-label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .spine-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .spine-diagram {
+    order: -1;
+  }
+
+  .body-svg {
+    width: 160px;
+    max-height: 340px;
+  }
+}
+
 .quiz-nav {
   display: flex;
   justify-content: space-between;

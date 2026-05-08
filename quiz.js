@@ -23,6 +23,49 @@
       this.classList.add('selected');
       answers['q' + currentQuestion] = input.value;
       nextBtn.disabled = false;
+
+      // Sync spine diagram highlight if on Q1
+      if (currentQuestion === 1) {
+        highlightSpineZone(input.value);
+      }
+    });
+  });
+
+  // Spine diagram click handling
+  var spineZones = document.querySelectorAll('.spine-zone');
+  var spineHighlights = document.querySelectorAll('.spine-highlight');
+
+  function highlightSpineZone(zone) {
+    spineHighlights.forEach(function (hl) { hl.setAttribute('opacity', '0'); });
+    var target = document.getElementById('hl-' + zone);
+    if (target) target.setAttribute('opacity', '1');
+    // Also highlight legs if sciatica
+    if (zone === 'sciatica') {
+      var legs = document.getElementById('hl-legs');
+      if (legs) legs.setAttribute('opacity', '1');
+    }
+  }
+
+  spineZones.forEach(function (zone) {
+    zone.addEventListener('click', function () {
+      var value = this.dataset.zone;
+      answers.q1 = value;
+
+      // Highlight the zone
+      highlightSpineZone(value);
+
+      // Select the matching radio option
+      var q1Options = document.querySelectorAll('[data-question="1"] .quiz-option');
+      q1Options.forEach(function (opt) {
+        var input = opt.querySelector('input');
+        opt.classList.remove('selected');
+        if (input.value === value) {
+          input.checked = true;
+          opt.classList.add('selected');
+        }
+      });
+
+      nextBtn.disabled = false;
     });
   });
 
